@@ -6,19 +6,20 @@ Reads from input file (.txt, .py, .cpp, etc) and displays highlighted code in th
 
 ## Structure:
 The input is processed to extract tokens and their types:
+Spacing:
+- Space: space
+- Tab: tab
+- Newline: newline
 
-    Space: space
-    Tab: tab
-    Newline: newline
-
-    Reserved word: reserved-word
-    Comments: comment
-    Operators: operator
-    Literals: literal
-    Strings: string
-    Functions: function
-    Variable: variable
-    Delimiter: delimiter
+Key words and characters:
+- Reserved word: reserved-word
+- Comments: comment
+- Operators: operator
+- Literals: literal
+- Strings: string
+- Functions: function
+- Variable: variable
+- Delimiter: delimiter
 
 
 Tokens are then highlighted with the following colors: 
