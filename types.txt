@@ -1,0 +1,7 @@
+reserved_words = def|return|class|try|except|finally|import|from|as|with|lambda|pass|yield|global|nonlocal|assert|del|raise|True|False|None|and|or|not|is|inclass|data|default|deriving|do|else|if|import|in|infix|infixl|infixr|instance|let|module|newtype|of|then|type|where|_|break|case|chan|const|continue|default|defer|else|fallthrough|for|func|go|goto|if|import|interface|map|package|range|return|select|struct|switch|type|var
+operators = +|-|*|%|=|!=|>|<|&|!|==|++|--|//
+literals = abcdefghiklmnopqrstuvwxyz0123456789
+comments = #|//
+identifiers = abcdefghiklmnopqrstuvwxyz0123456789
+delimiters = ;|{|}|[|]|(|)|:|,
+control = if|else|elif|while|break|continue|for|case

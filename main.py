@@ -1,41 +1,37 @@
 from highlighter.highlighter import Highlighter
+from token_separator.token_separator import TokenSeparator
+import argparse
+
+def parse_args():
+    '''parses the command line arguments'''
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--path', type=str, default="tests/test.txt", help="path to test file")
+
+    return parser.parse_args()
+
 
 def main():
-    # Extract tokens from txt
-    tokens = [
-        {"data": "# Función para escapar caracteres HTML", "type": "comment"},
-        {"data": "", "type": "end-line"},
-        {"data": "def", "type": "reserved-word"},
-        {"data": "addNums", "type": "function"},
-        {"data": "()", "type": "delimiter"},
-        {"data": ":", "type": "delimiter"},
-        {"data": "", "type": "end-line"},
-        {"data": "", "type": "tab"},
-        {"data": "variable", "type": "variable"},
-        {"data": "=", "type": "operator"},
-        {"data": "120", "type": "literal"},
-        {"data": "", "type": "end-line"},
-        {"data": "", "type": "tab"},
-        {"data": "variable", "type": "variable"},
-        {"data": "=", "type": "operator"},
-        {"data": "string", "type": "string"},
-        {"data": "", "type": "end-line"},
-        {"data": "", "type": "tab"},
-        {"data": "if", "type": "control"},
-        {"data": "(", "type": "delimiter"},
-        {"data": "variable", "type": "variable"},
-        {"data": "==", "type": "operator"},
-        {"data": "string", "type": "string"},
-        {"data": ")", "type": "delimiter"},
-        
-    ]
+    args = parse_args()
+    token = TokenSeparator(types_path="types.txt", process_file=args.path).run()
 
     # Highlight in html
     highlight = Highlighter()
     highlight.start_doc()
 
-    for token in tokens:
-        highlight.add_data(token["data"], token["type"])
+    counter = 0
+    for i in range(len(token)):
+        if token[i]["type"] == "space":
+            counter += 1
+        else:
+            counter = 0
+        
+        if counter == 2:
+            highlight.add_data("", token[i]["type"])
+            counter = 0
+        
+        if token[i]["type"] != 'space':
+            highlight.add_data(token[i]["data"], token[i]["type"])
+    
 
     highlight.end_doc()
 

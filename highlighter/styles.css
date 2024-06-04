@@ -8,6 +8,10 @@ body {
     font-family: 'Courier New', Courier, monospaces;
 }
 
+/* p {
+    display: inline;
+} */
+
 .reserved-word{
     color: #4A9CD6;
     display: inline;

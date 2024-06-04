@@ -14,13 +14,14 @@ class Highlighter:
         self.file.close()
 
     def add_data(self, data, type):
+        data = data.replace("<", "&lt;")
+        data = data.replace(">", "&gt;")
+
         if type == "new-line":
             self.file.write("<br>\n")
         elif type == "tab":
-            self.file.write("   &nbsp;&nbsp;&nbsp;&nbsp;\n")
+            self.file.write("&nbsp;&nbsp;&nbsp;&nbsp;\n")
         elif type == "space":
-            self.file.write("   &nbsp;\n")
-        elif type == "string":
-            self.file.write(f'  <div class="{type}">"{data}"</div>\n')
+            self.file.write("&nbsp;")
         else:
             self.file.write(f'  <div class="{type}">{data}</div>\n')

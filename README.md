@@ -1,18 +1,12 @@
 # SintaxHighlighter
 Scripts to highlight code syntax. 
 
-## 
-
-tokens = [
-    {"data": "# Función para escapar caracteres HTML", "type": "comments"},
-    {"data": "def", "type": "kw"},
-    {"data": "", "type": "newline"},
-    {"data": "", "type": "space"},
-    {"data": "", "type": "tab"},
-]
+Reads from input file (.txt, .py, .cpp, etc) and displays highlighted code in the output.html file.
 
 
-Types:
+## Structure:
+The input is processed to extract tokens and their types:
+
     Space: space
     Tab: tab
     Newline: newline
@@ -26,16 +20,32 @@ Types:
     Variable: variable
     Delimiter: delimiter
 
-Tabla 
+
+Tokens are then highlighted with the following colors: 
 
 |  Token         |   Keyword        |  Color           | HexCode |
 |----------------|------------------|------------------|---------|
-| Reserved word  | reserved-word    |  Azul            | #4A9CD6 |
-| Comments       | comment          |  Verde           | #84B371 |
-| Operators      | operator         |  Negro           | #000000 |
-| Literals       | literal          |  Azul claro      | #5EB2BE |
-| Strings        | string           |  Naranja         | #E2A951 |
-| Functions      | function         |  Amarillo        | #DCDCAA |
-| Variable       | variable         |  Negro           | #000000 |
-| Delimiter      | delimiter        |  Amarillo fuerte | #FFD70A |
+| Reserved word  | reserved-word    |  Blue            | #4A9CD6 |
+| Comments       | comment          |  Green           | #84B371 |
+| Operators      | operator         |  White           | #000000 |
+| Literals       | literal          |  Light Blue      | #5EB2BE |
+| Strings        | string           |  Orange          | #E2A951 |
+| Functions      | function         |  Yellow          | #DCDCAA |
+| Variable       | variable         |  Green           | #000000 |
+| Delimiter      | delimiter        |  Dark yellow     | #FFD70A |
 
+
+
+## Usage
+To run the script, use the following command from the main directory:
+
+```bash
+python3 main.py  
+```
+
+Optionally, specify the input file name:
+```bash
+python3 main.py --path tests/test.py
+```
+
+    
