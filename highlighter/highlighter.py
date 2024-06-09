@@ -1,4 +1,4 @@
-STYLE = """"
+STYLE = """
 .type {
     color: #0000FF;
     display: inline;
@@ -65,8 +65,7 @@ class Highlighter:
     
     def start_doc(self):
         self.file.write("<html>\n")
-        self.file.write("<head>\n   <link rel='stylesheet' type='text/css' href='styles.css'>\n<head>\n\n")
-        self.file.write(f"<style>\n{STYLE}\n<style>\n\n")
+        self.file.write(f"<style>\n{STYLE}\n</style>\n\n")
         self.file.write("\n<body>\n")
 
     def end_doc(self):

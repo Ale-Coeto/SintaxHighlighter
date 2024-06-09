@@ -35,12 +35,12 @@ def remove_extension(file_path):
 def highlighter(path):
     
     token = TokenSeparator(types_path="types.txt", process_file=path).run()
-
     # Path without extension
-    html_output = remove_extension(path) + get_ext(path) + ".html"
+    html_output = remove_extension(path) + "_" + get_ext(path) + ".html"
 
     highlight = Highlighter(html_output)
     highlight.start_doc()
+    
 
     counter = 0
     for i in range(len(token)):
@@ -62,19 +62,18 @@ def highlighter(path):
 
 if __name__ == "__main__":
     start_time = time.time()
-    valid = [".cpp", ".py", ".txt"]
+    valid = ["cpp", "py", "txt"]
     process_files = get_all_files('./tests')
-
     process_files = remove_invalid_exts(process_files, valid)
-
     threads = []
-
+    
     for file in process_files:
         # print(file)
         # continue
         t1 = threading.Thread(target=highlighter, args=(file,))
         t1.start()
         threads.append(t1)
+
 
     for thread in threads:
         thread.join()
