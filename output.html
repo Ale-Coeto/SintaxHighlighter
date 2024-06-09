@@ -5,125 +5,133 @@
 
 
 <body>
-  <div class="comment">#include &lt;algorithm&gt;</div>
+  <div class="reserved-word">import</div>
+  <div class="variable">re</div>
 <br>
 <br>
-  <div class="comment">#define PI 3.141592653589793</div>
+  <div class="comment"># Función para leer las categorías léxicas desde un archivo</div>
 <br>
-  <div class="comment">#define EPS 0.000000001</div>
-<br>
-  <div class="comment">#define INF 1000000000</div>
-<br>
-<br>
-  <div class="comment">#define _ ios_base::sync_with_stdio(0), cin.tie(0), cin.tie(0), cout.tie(0), cout.precision(15);</div>
-<br>
-  <div class="comment">#define FOR(i, a, b) for(int i=int(a); i&lt;int(b); i++)</div>
-<br>
-  <div class="comment">#define RFOR(i, a, b) for(int i=int(a)-1; i&gt;=int(b); i--)</div>
-<br>
-  <div class="comment">#define FORC(cont, it) for(typeof((cont).begin()) it = (cont).begin(); it != (cont).end(); it++)</div>
-<br>
-  <div class="comment">#define RFORC(cont, it) for(typeof((cont).rbegin()) it = (cont).rbegin(); it != (cont).rend(); it++)</div>
-<br>
-  <div class="comment">#define pb push_back</div>
-<br>
-<br>
-  <div class="variable">using</div>
-  <div class="variable">namespace</div>
-  <div class="variable">std</div>
-  <div class="delimiter">;</div>
-<br>
-<br>
-  <div class="variable">typedef</div>
-  <div class="variable">long</div>
-  <div class="variable">long</div>
-  <div class="variable">ll</div>
-  <div class="delimiter">;</div>
-<br>
-  <div class="variable">typedef</div>
-  <div class="variable">pair</div>
-  <div class="operator">&lt;</div>
-  <div class="variable">int</div>
-  <div class="delimiter">,</div>
-  <div class="variable">int</div>
-  <div class="operator">&gt;</div>
-  <div class="variable">ii</div>
-  <div class="delimiter">;</div>
-<br>
-  <div class="variable">typedef</div>
-  <div class="variable">vector</div>
-  <div class="operator">&lt;</div>
-  <div class="variable">int</div>
-  <div class="operator">&gt;</div>
-  <div class="variable">vi</div>
-  <div class="delimiter">;</div>
-<br>
-  <div class="variable">typedef</div>
-  <div class="variable">vector</div>
-  <div class="operator">&lt;</div>
-  <div class="variable">ii</div>
-  <div class="operator">&gt;</div>
-  <div class="variable">vii</div>
-  <div class="delimiter">;</div>
-<br>
-<br>
-  <div class="comment">#define MAXN 10</div>
-<br>
-  <div class="comment">#define MOD 1000000007</div>
-<br>
-<br>
-  <div class="variable">int</div>
-  <div class="function">main</div>
+  <div class="reserved-word">def</div>
+  <div class="function">read_lexical_categories</div>
   <div class="delimiter">(</div>
+  <div class="variable">file</div>
   <div class="delimiter">)</div>
-  <div class="delimiter">{</div>
+  <div class="delimiter">:</div>
 <br>
-&nbsp;&nbsp;  <div class="variable">int</div>
-  <div class="variable">a</div>
+&nbsp;&nbsp;  <div class="variable">categories</div>
   <div class="operator">=</div>
-  <div class="literal">1</div>
-  <div class="operator">+</div>
-  <div class="literal">3</div>
-  <div class="delimiter">;</div>
+  <div class="delimiter">{</div>
+  <div class="delimiter">}</div>
 <br>
-&nbsp;&nbsp;  <div class="reserved-word">if</div>
+&nbsp;&nbsp;  <div class="reserved-word">with</div>
+  <div class="function">open</div>
   <div class="delimiter">(</div>
-  <div class="variable">a</div>
-  <div class="operator">&lt;</div>
-  <div class="literal">4</div>
+  <div class="variable">file</div>
+  <div class="delimiter">,</div>
+  <div class="string">'r'</div>
   <div class="delimiter">)</div>
-  <div class="delimiter">{</div>
+  <div class="reserved-word">as</div>
+  <div class="variable">f</div>
+  <div class="delimiter">:</div>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">cout</div>
-  <div class="operator">&lt;</div>
-  <div class="operator">&lt;</div>
-  <div class="string">"a &lt; 4"</div>
-  <div class="operator">&lt;</div>
-  <div class="operator">&lt;</div>
-  <div class="variable">endl</div>
-  <div class="delimiter">;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">line</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">f</div>
+  <div class="delimiter">:</div>
 <br>
-&nbsp;&nbsp;  <div class="delimiter">}</div>
-  <div class="reserved-word">else</div>
-  <div class="delimiter">{</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="string">'='</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">line</div>
+  <div class="delimiter">:</div>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">cout</div>
-  <div class="operator">&lt;</div>
-  <div class="operator">&lt;</div>
-  <div class="string">"a &gt;= 4"</div>
-  <div class="operator">&lt;</div>
-  <div class="operator">&lt;</div>
-  <div class="variable">endl</div>
-  <div class="delimiter">;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">key</div>
+  <div class="delimiter">,</div>
+  <div class="variable">value</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="string">'='</div>
+  <div class="delimiter">,</div>
+  <div class="literal">1</div>
+  <div class="delimiter">)</div>
 <br>
-&nbsp;&nbsp;  <div class="delimiter">}</div>
-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">categories</div>
+  <div class="delimiter">[</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">]</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">(</div>
+  <div class="string">'"</div>
 <br>
 &nbsp;&nbsp;  <div class="reserved-word">return</div>
-  <div class="literal">0</div>
-  <div class="delimiter">;</div>
+  <div class="variable">categories</div>
 <br>
-  <div class="delimiter">}</div>
+<br>
+  <div class="comment"># Función para resaltar una categoría léxica</div>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">sum2</div>
+  <div class="delimiter">(</div>
+  <div class="variable">num1</div>
+  <div class="delimiter">,</div>
+  <div class="variable">num2</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="variable">num1</div>
+  <div class="operator">+</div>
+  <div class="variable">num2</div>
+<br>
+<br>
+  <div class="comment"># Función para resaltar el texto según las categorías léxicas</div>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">print_array</div>
+  <div class="delimiter">(</div>
+  <div class="variable">array</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">item</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">array</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="function">print</div>
+  <div class="delimiter">(</div>
+  <div class="variable">item</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+  <div class="comment"># Crear un array de prueba</div>
+<br>
+  <div class="variable">array</div>
+  <div class="operator">=</div>
+  <div class="delimiter">[</div>
+  <div class="string">"hola"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"mundo"</div>
+  <div class="delimiter">,</div>
+  <div class="literal">124</div>
+  <div class="delimiter">,</div>
+  <div class="string">"456"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"789"</div>
+  <div class="delimiter">]</div>
+<br>
+<br>
+  <div class="comment"># Llamada de prueba</div>
+<br>
+  <div class="function">print_array</div>
+  <div class="delimiter">(</div>
+  <div class="variable">array</div>
+  <div class="delimiter">)</div>
 <br>
 </body>
 </html>

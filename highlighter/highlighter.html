@@ -1,0 +1,145 @@
+<html>
+<head>
+   <link rel='stylesheet' type='text/css' href='highlighter/styles.css'>
+<head>
+
+
+<body>
+<br>
+  <div class="reserved-word">class</div>
+  <div class="variable">Highlighter</div>
+  <div class="delimiter">:</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">def</div>
+  <div class="function">__init__</div>
+  <div class="delimiter">(</div>
+  <div class="variable">self</div>
+  <div class="delimiter">,</div>
+  <div class="variable">output_path</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="operator">=</div>
+  <div class="function">open</div>
+  <div class="delimiter">(</div>
+  <div class="variable">output_path</div>
+  <div class="delimiter">,</div>
+  <div class="string">"w"</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">def</div>
+  <div class="function">start_doc</div>
+  <div class="delimiter">(</div>
+  <div class="variable">self</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&lt;html&gt;\n"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&lt;head&gt;\n   &lt;link rel='</div>
+  <div class="variable">stylesheet</div>
+  <div class="string">' type='</div>
+  <div class="string">' href='</div>
+  <div class="string">'&gt;\n&lt;head&gt;\n\n"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"\n&lt;body&gt;\n"</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">def</div>
+  <div class="function">end_doc</div>
+  <div class="delimiter">(</div>
+  <div class="variable">self</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&lt;/body&gt;\n&lt;/html&gt;"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">def</div>
+  <div class="function">add_data</div>
+  <div class="delimiter">(</div>
+  <div class="variable">self</div>
+  <div class="delimiter">,</div>
+  <div class="reserved-word">data</div>
+  <div class="delimiter">,</div>
+  <div class="reserved-word">type</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">data</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="string">"&lt;"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"&lt;"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">data</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="string">"&gt;"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"&gt;"</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="reserved-word">type</div>
+  <div class="operator">=</div>
+  <div class="operator">=</div>
+  <div class="string">"new-line"</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&lt;br&gt;\n"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="control">elif</div>
+  <div class="reserved-word">type</div>
+  <div class="operator">=</div>
+  <div class="operator">=</div>
+  <div class="string">"tab"</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&nbsp;&nbsp;&nbsp;&nbsp;\n"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="control">elif</div>
+  <div class="reserved-word">type</div>
+  <div class="operator">=</div>
+  <div class="operator">=</div>
+  <div class="string">"space"</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">"&nbsp;"</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">else</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="variable">f</div>
+  <div class="string">'  &lt;div class="</div>
+  <div class="delimiter">{</div>
+  <div class="reserved-word">type</div>
+  <div class="delimiter">}</div>
+  <div class="string">"&gt;{data}&lt;/div&gt;\n'</div>
+  <div class="delimiter">)</div>
+<br>
+</body>
+</html>

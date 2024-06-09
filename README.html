@@ -1,0 +1,287 @@
+<html>
+<head>
+   <link rel='stylesheet' type='text/css' href='highlighter/styles.css'>
+<head>
+
+
+<body>
+  <div class="comment"># SintaxHighlighter</div>
+<br>
+  <div class="variable">Scripts</div>
+  <div class="variable">to</div>
+  <div class="variable">highlight</div>
+  <div class="variable">code</div>
+<br>
+<br>
+  <div class="variable">Reads</div>
+  <div class="reserved-word">from</div>
+  <div class="variable">input</div>
+  <div class="variable">file</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">,</div>
+  <div class="delimiter">,</div>
+  <div class="delimiter">,</div>
+  <div class="variable">etc</div>
+  <div class="delimiter">)</div>
+  <div class="reserved-word">and</div>
+  <div class="variable">displays</div>
+  <div class="variable">highlighted</div>
+  <div class="variable">code</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">the</div>
+&nbsp;<br>
+<br>
+<br>
+  <div class="comment">## Structure:</div>
+<br>
+  <div class="variable">The</div>
+  <div class="variable">input</div>
+  <div class="reserved-word">is</div>
+  <div class="variable">processed</div>
+  <div class="variable">to</div>
+  <div class="variable">extract</div>
+  <div class="variable">tokens</div>
+  <div class="reserved-word">and</div>
+  <div class="variable">their</div>
+  <div class="variable">types</div>
+  <div class="delimiter">:</div>
+<br>
+  <div class="variable">Spacing</div>
+  <div class="delimiter">:</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Space</div>
+  <div class="delimiter">:</div>
+  <div class="variable">space</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Tab</div>
+  <div class="delimiter">:</div>
+  <div class="variable">tab</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Newline</div>
+  <div class="delimiter">:</div>
+  <div class="variable">newline</div>
+<br>
+<br>
+  <div class="variable">Key</div>
+  <div class="variable">words</div>
+  <div class="reserved-word">and</div>
+  <div class="variable">characters</div>
+  <div class="delimiter">:</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Reserved</div>
+  <div class="variable">word</div>
+  <div class="delimiter">:</div>
+  <div class="variable">reserved</div>
+  <div class="operator">-</div>
+  <div class="variable">word</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Comments</div>
+  <div class="delimiter">:</div>
+  <div class="variable">comment</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Operators</div>
+  <div class="delimiter">:</div>
+  <div class="variable">operator</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Literals</div>
+  <div class="delimiter">:</div>
+  <div class="variable">literal</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Strings</div>
+  <div class="delimiter">:</div>
+  <div class="variable">string</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Functions</div>
+  <div class="delimiter">:</div>
+  <div class="variable">function</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Variable</div>
+  <div class="delimiter">:</div>
+  <div class="variable">variable</div>
+<br>
+  <div class="operator">-</div>
+  <div class="variable">Delimiter</div>
+  <div class="delimiter">:</div>
+  <div class="variable">delimiter</div>
+<br>
+<br>
+<br>
+  <div class="variable">Tokens</div>
+  <div class="variable">are</div>
+  <div class="reserved-word">then</div>
+  <div class="variable">highlighted</div>
+  <div class="reserved-word">with</div>
+  <div class="variable">the</div>
+  <div class="variable">following</div>
+  <div class="variable">colors</div>
+  <div class="delimiter">:</div>
+<br>
+<br>
+&nbsp;  <div class="variable">Token</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Keyword</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Color</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">HexCode</div>
+<br>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="operator">-</div>
+<br>
+  <div class="variable">Reserved</div>
+  <div class="variable">word</div>
+&nbsp;  <div class="variable">reserved</div>
+  <div class="operator">-</div>
+  <div class="variable">word</div>
+&nbsp;&nbsp;&nbsp;  <div class="variable">Blue</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#4A9CD6 |</div>
+<br>
+  <div class="variable">Comments</div>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">comment</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Green</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#84B371 |</div>
+<br>
+  <div class="variable">Operators</div>
+&nbsp;&nbsp;&nbsp;  <div class="variable">operator</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">White</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#000000 |</div>
+<br>
+  <div class="variable">Literals</div>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">literal</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Light</div>
+  <div class="variable">Blue</div>
+&nbsp;&nbsp;&nbsp;  <div class="comment">#5EB2BE |</div>
+<br>
+  <div class="variable">Strings</div>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">string</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Orange</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#E2A951 |</div>
+<br>
+  <div class="variable">Functions</div>
+&nbsp;&nbsp;&nbsp;  <div class="variable">function</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Yellow</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#DCDCAA |</div>
+<br>
+  <div class="variable">Variable</div>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">variable</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Green</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="comment">#000000 |</div>
+<br>
+  <div class="variable">Delimiter</div>
+&nbsp;&nbsp;&nbsp;  <div class="variable">delimiter</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">Dark</div>
+  <div class="variable">yellow</div>
+&nbsp;&nbsp;&nbsp;  <div class="comment">#FFD70A |</div>
+<br>
+<br>
+<br>
+<br>
+  <div class="comment">## Usage</div>
+<br>
+  <div class="variable">To</div>
+  <div class="variable">run</div>
+  <div class="variable">the</div>
+  <div class="variable">script</div>
+  <div class="delimiter">,</div>
+  <div class="variable">use</div>
+  <div class="variable">the</div>
+  <div class="variable">following</div>
+  <div class="variable">command</div>
+  <div class="reserved-word">from</div>
+  <div class="variable">the</div>
+  <div class="variable">main</div>
+  <div class="variable">directory</div>
+  <div class="delimiter">:</div>
+<br>
+<br>
+<br>
+  <div class="variable">python3</div>
+<br>
+<br>
+<br>
+  <div class="variable">Optionally</div>
+  <div class="delimiter">,</div>
+  <div class="variable">specify</div>
+  <div class="variable">the</div>
+  <div class="variable">input</div>
+  <div class="variable">file</div>
+  <div class="variable">name</div>
+  <div class="delimiter">:</div>
+<br>
+<br>
+  <div class="variable">python3</div>
+&nbsp;  <div class="operator">-</div>
+  <div class="operator">-</div>
+  <div class="variable">path</div>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<html>
+<head>
+   <link rel='stylesheet' type='text/css' href='highlighter/styles.css'>
+<head>
+
+
+<body>
+  <div class="reserved-word">from</div>
+&nbsp;  <div class="reserved-word">import</div>
+  <div class="variable">Highlighter</div>
+<br>
+  <div class="reserved-word">from</div>
+&nbsp;  <div class="reserved-word">import</div>
+  <div class="variable">TokenSeparator</div>
+<br>
+  <div class="reserved-word">import</div>
+  <div class="variable">argparse</div>
+<br>
+  <div class="reserved-word">import</div>
+  <div class="variable">threading</div>
+<br>
+<br>
+  <div class="reserved-word">import</div>
+  <div class="variable">os</div>
+<br>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">get_all_files</div>
+  <div class="delimiter">(</div>
+  <div class="variable">directory</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="variable">files</div>
+  <div class="operator">=</div>
+  <div class="delimiter">[</div>
+  <div class="delimiter">]</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">root</div>
+  <div class="delimiter">,</div>
+  <div class="reserved-word">_</div>
+  <div class="delimiter">,</div>
+  <div class="variable">filenames</div>
+  <div class="reserved-word">in</div>
+  <div class="delimiter">(</div>
+  <div class="variable">directory</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">filename</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">filenames</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">(</div>
+  <div class="variable">root</div>
+  <div class="delimiter">,</div>
+  <div class="variable">filename</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="variable">files</div>
+<br>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">remove_extension</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file_path</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file_path</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">[</div>
+  <div class="literal">0</div>
+  <div class="delimiter">]</div>
+<br>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">parse_args</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="string">''</div>
+  <div class="string">'parses the command line arguments'</div>
+  <div class="string">''</div>
+<br>
+&nbsp;&nbsp;  <div class="variable">parser</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="variable">description</div>
+  <div class="operator">=</div>
+  <div class="variable">__doc__</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">'--path'</div>
+  <div class="delimiter">,</div>
+  <div class="reserved-word">type</div>
+  <div class="operator">=</div>
+  <div class="variable">str</div>
+  <div class="delimiter">,</div>
+  <div class="reserved-word">default</div>
+  <div class="operator">=</div>
+  <div class="string">"tests/test.cpp"</div>
+  <div class="delimiter">,</div>
+  <div class="variable">help</div>
+  <div class="operator">=</div>
+  <div class="string">"path to test file"</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+<br>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">highlighter</div>
+  <div class="delimiter">(</div>
+  <div class="variable">path</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="variable">token</div>
+  <div class="operator">=</div>
+  <div class="function">TokenSeparator</div>
+  <div class="delimiter">(</div>
+  <div class="variable">types_path</div>
+  <div class="operator">=</div>
+  <div class="string">"types.txt"</div>
+  <div class="delimiter">,</div>
+  <div class="variable">process_file</div>
+  <div class="operator">=</div>
+  <div class="variable">path</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="comment"># Highlight in html</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="comment"># Path without extension</div>
+<br>
+&nbsp;&nbsp;  <div class="variable">html_output</div>
+  <div class="operator">=</div>
+  <div class="function">remove_extension</div>
+  <div class="delimiter">(</div>
+  <div class="variable">path</div>
+  <div class="delimiter">)</div>
+  <div class="operator">+</div>
+  <div class="string">".html"</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="variable">highlight</div>
+  <div class="operator">=</div>
+  <div class="function">Highlighter</div>
+  <div class="delimiter">(</div>
+  <div class="variable">html_output</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="variable">counter</div>
+  <div class="operator">=</div>
+  <div class="literal">0</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">i</div>
+  <div class="reserved-word">in</div>
+  <div class="reserved-word">range</div>
+  <div class="delimiter">(</div>
+  <div class="function">len</div>
+  <div class="delimiter">(</div>
+  <div class="variable">token</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="variable">token</div>
+  <div class="delimiter">[</div>
+  <div class="variable">i</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">[</div>
+  <div class="string">"type"</div>
+  <div class="delimiter">]</div>
+  <div class="operator">=</div>
+  <div class="operator">=</div>
+  <div class="string">"space"</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">counter</div>
+  <div class="operator">+</div>
+  <div class="operator">=</div>
+  <div class="literal">1</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">else</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">counter</div>
+  <div class="operator">=</div>
+  <div class="literal">0</div>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="variable">counter</div>
+  <div class="operator">=</div>
+  <div class="operator">=</div>
+  <div class="literal">2</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="string">""</div>
+  <div class="delimiter">,</div>
+  <div class="variable">token</div>
+  <div class="delimiter">[</div>
+  <div class="variable">i</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">[</div>
+  <div class="string">"type"</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">counter</div>
+  <div class="operator">=</div>
+  <div class="literal">0</div>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="variable">token</div>
+  <div class="delimiter">[</div>
+  <div class="variable">i</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">[</div>
+  <div class="string">"type"</div>
+  <div class="delimiter">]</div>
+  <div class="operator">!</div>
+  <div class="operator">=</div>
+  <div class="string">'space'</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="variable">token</div>
+  <div class="delimiter">[</div>
+  <div class="variable">i</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">[</div>
+  <div class="string">"data"</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">,</div>
+  <div class="variable">token</div>
+  <div class="delimiter">[</div>
+  <div class="variable">i</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">[</div>
+  <div class="string">"type"</div>
+  <div class="delimiter">]</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+<br>
+  <div class="variable">process_files</div>
+  <div class="operator">=</div>
+  <div class="function">get_all_files</div>
+  <div class="delimiter">(</div>
+  <div class="string">'.'</div>
+  <div class="delimiter">)</div>
+<br>
+  <div class="variable">threads</div>
+  <div class="operator">=</div>
+  <div class="delimiter">[</div>
+  <div class="delimiter">]</div>
+<br>
+<br>
+  <div class="reserved-word">for</div>
+  <div class="variable">file</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">process_files</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="function">print</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="variable">t1</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="variable">target</div>
+  <div class="operator">=</div>
+  <div class="variable">highlighter</div>
+  <div class="delimiter">,</div>
+  <div class="variable">args</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file</div>
+  <div class="delimiter">,</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="variable">t1</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+  <div class="reserved-word">for</div>
+  <div class="variable">thread</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">threads</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+</body>
+</html>
