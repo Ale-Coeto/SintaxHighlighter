@@ -1,6 +1,5 @@
 from highlighter.highlighter import Highlighter
 from token_separator.token_separator import TokenSeparator
-import argparse
 import threading
 import time
 import os
@@ -67,18 +66,24 @@ if __name__ == "__main__":
     process_files = remove_invalid_exts(process_files, valid)
     threads = []
     
-    for file in process_files:
-        # print(file)
+    USE_THREADS = False
+
+    if USE_THREADS:
+        for file in process_files:
+            # print(file)
         # continue
-        t1 = threading.Thread(target=highlighter, args=(file,))
-        t1.start()
-        threads.append(t1)
+            t1 = threading.Thread(target=highlighter, args=(file,))
+            t1.start()
+            threads.append(t1)
 
-
-    for thread in threads:
-        thread.join()
+        for thread in threads:
+            thread.join()
+    else:
+        for file in process_files:
+            # print(file)
+        # continue
+            highlighter(file)
 
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Execution time: {execution_time} seconds")
-

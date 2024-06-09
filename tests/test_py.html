@@ -1,0 +1,196 @@
+<html>
+<style>
+
+.type {
+    color: #0000FF;
+    display: inline;
+}
+
+body {
+    background: #1c1c1c;
+    font-family: 'Courier New', Courier, monospaces;
+}
+
+/* p {
+    display: inline;
+} */
+
+.reserved-word{
+    color: #4A9CD6;
+    display: inline;
+}
+
+.comment {
+    color: #84B371;
+    display: inline;
+}
+
+.operator {
+    color: #fff;
+    display: inline;
+}
+
+.literal{
+    color: #a9cbea;
+    display: inline;
+}
+
+.string{
+    color: rgb(209, 132, 31);
+    display: inline;
+}
+
+.function{
+    color: #DCDCAA;
+    display: inline;
+}
+
+.delimiter{
+    color: #EDDA61;
+    display: inline;
+}
+
+.variable {
+    color: rgb(82, 189, 199);
+    display: inline;
+}
+
+.control{
+    color: #ea7ae6;
+    display: inline;
+}
+
+</style>
+
+
+<body>
+  <div class="reserved-word">import</div>
+  <div class="variable">re</div>
+<br>
+<br>
+  <div class="comment"># Función para leer las categorías léxicas desde un archivo</div>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">read_lexical_categories</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="variable">categories</div>
+  <div class="operator">=</div>
+  <div class="delimiter">{</div>
+  <div class="delimiter">}</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">with</div>
+  <div class="function">open</div>
+  <div class="delimiter">(</div>
+  <div class="variable">file</div>
+  <div class="delimiter">,</div>
+  <div class="string">'r'</div>
+  <div class="delimiter">)</div>
+  <div class="reserved-word">as</div>
+  <div class="variable">f</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">line</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">f</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="reserved-word">if</div>
+  <div class="string">'='</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">line</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">key</div>
+  <div class="delimiter">,</div>
+  <div class="variable">value</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="string">'='</div>
+  <div class="delimiter">,</div>
+  <div class="literal">1</div>
+  <div class="delimiter">)</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <div class="variable">categories</div>
+  <div class="delimiter">[</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">]</div>
+  <div class="operator">=</div>
+  <div class="delimiter">(</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">(</div>
+  <div class="string">'"</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="variable">categories</div>
+<br>
+<br>
+  <div class="comment"># Función para resaltar una categoría léxica</div>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">sum2</div>
+  <div class="delimiter">(</div>
+  <div class="variable">num1</div>
+  <div class="delimiter">,</div>
+  <div class="variable">num2</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">return</div>
+  <div class="variable">num1</div>
+  <div class="operator">+</div>
+  <div class="variable">num2</div>
+<br>
+<br>
+  <div class="comment"># Función para resaltar el texto según las categorías léxicas</div>
+<br>
+  <div class="reserved-word">def</div>
+  <div class="function">print_array</div>
+  <div class="delimiter">(</div>
+  <div class="variable">array</div>
+  <div class="delimiter">)</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;  <div class="reserved-word">for</div>
+  <div class="variable">item</div>
+  <div class="reserved-word">in</div>
+  <div class="variable">array</div>
+  <div class="delimiter">:</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  <div class="function">print</div>
+  <div class="delimiter">(</div>
+  <div class="variable">item</div>
+  <div class="delimiter">)</div>
+<br>
+<br>
+  <div class="comment"># Crear un array de prueba</div>
+<br>
+  <div class="variable">array</div>
+  <div class="operator">=</div>
+  <div class="delimiter">[</div>
+  <div class="string">"hola"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"mundo"</div>
+  <div class="delimiter">,</div>
+  <div class="literal">124</div>
+  <div class="delimiter">,</div>
+  <div class="string">"456"</div>
+  <div class="delimiter">,</div>
+  <div class="string">"789"</div>
+  <div class="delimiter">]</div>
+<br>
+<br>
+  <div class="comment"># Llamada de prueba</div>
+<br>
+  <div class="function">print_array</div>
+  <div class="delimiter">(</div>
+  <div class="variable">array</div>
+  <div class="delimiter">)</div>
+<br>
+</body>
+</html>
