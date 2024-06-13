@@ -1,6 +1,7 @@
 from highlighter.highlighter import Highlighter
 from token_separator.token_separator import TokenSeparator
 import threading
+import multiprocessing
 import time
 import os
 
@@ -59,16 +60,14 @@ def highlighter(path):
     highlight.end_doc()
 
 
-if __name__ == "__main__":
+def main(method):
     start_time = time.time()
     valid = ["cpp", "py", "txt"]
     process_files = get_all_files('./tests')
     process_files = remove_invalid_exts(process_files, valid)
-    threads = []
     
-    USE_THREADS = False
-
-    if USE_THREADS:
+    if method == "threads":
+        threads = []
         for file in process_files:
             # print(file)
         # continue
@@ -78,12 +77,39 @@ if __name__ == "__main__":
 
         for thread in threads:
             thread.join()
-    else:
+            
+    elif method == "sequential":
         for file in process_files:
-            # print(file)
-        # continue
             highlighter(file)
+            
+    elif method == "multiprocessing":
+        jobs = []
+        for file in process_files:
+            p = multiprocessing.Process(target=highlighter, args=(file,))
+            jobs.append(p)
+            p.start()
+
+        for job in jobs:
+            job.join()
 
     end_time = time.time()
     execution_time = end_time - start_time
-    print(f"Execution time: {execution_time} seconds")
+    return execution_time
+    
+
+if __name__ == "__main__":
+    repeticiones = 10
+
+    
+    methods = ["multiprocessing", "sequential", "threads"]
+    
+    print("Ejecutando pruebas con", repeticiones, "repeticiones")
+    
+    for method in methods:
+        promedio = 0
+        print("Ejecutando con", method)
+        for i in range(repeticiones):
+            promedio += main(method)
+        print("Promedio:", promedio / repeticiones)
+        print()
+    
