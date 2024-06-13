@@ -66,12 +66,13 @@ if __name__ == "__main__":
     process_files = remove_invalid_exts(process_files, valid)
     threads = []
     
-    USE_THREADS = False
+    USE_THREADS = True
 
     if USE_THREADS:
         for file in process_files:
             # print(file)
         # continue
+            print("Multithreading")
             t1 = threading.Thread(target=highlighter, args=(file,))
             t1.start()
             threads.append(t1)
@@ -80,6 +81,7 @@ if __name__ == "__main__":
             thread.join()
     else:
         for file in process_files:
+            print("Secuencial")
             # print(file)
         # continue
             highlighter(file)
